@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useParams, useLocation } from "wouter";
-import { ArrowLeft, Check, X } from "lucide-react";
+import { ArrowLeft, Check, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { PRODUCTS } from "@/data/products";
@@ -12,17 +12,18 @@ interface OrderData {
   email: string;
   colors: string[];
   qty: string;
-  fulfillment: string;
-  payment: string;
   town: string;
   reason: string;
   isGift: string;
+  hearAboutUs: string;
+  payment: string;
+  fulfillment: string;
   whatsappGroup: string;
 }
 
 const EMPTY: OrderData = {
-  name: "", email: "", colors: [], qty: "1", fulfillment: "", payment: "",
-  town: "", reason: "", isGift: "", whatsappGroup: "",
+  name: "", email: "", colors: [], qty: "1", town: "",
+  reason: "", isGift: "", hearAboutUs: "", payment: "", fulfillment: "", whatsappGroup: "",
 };
 
 function OrderModal({ product, onClose }: { product: typeof PRODUCTS[0]; onClose: () => void }) {
@@ -64,27 +65,8 @@ function OrderModal({ product, onClose }: { product: typeof PRODUCTS[0]; onClose
       </div>
     </div>,
 
-    // Step 1: fulfillment + payment + town
-
+    // Step 1: town
     <div key="1" className="flex flex-col gap-5">
-      <div>
-        <label className="text-[11px] font-black uppercase tracking-widest text-[#111] mb-2 block">How would you like to receive it?</label>
-        <div className="flex flex-col gap-2">
-          {["Pickup at our pick station", "Delivery to my address"].map(opt => (
-            <button key={opt} onClick={() => {
-              set("fulfillment", opt);
-              if (opt === "Pickup at our pick station") set("payment", "Pay at pickup");
-              else set("payment", "Pay before delivery");
-            }} className={`px-4 py-3 border text-[13px] font-semibold text-left transition-all ${data.fulfillment === opt ? "border-[#111] bg-[#111] text-white" : "border-gray-200 text-[#555]"}`}>{opt}</button>
-          ))}
-        </div>
-      </div>
-      {data.fulfillment === "Pickup at our pick station" && (
-        <p className="text-[12px] text-red-500">* You can pay before pickup or pay at the pick station within 12 hours of your order.</p>
-      )}
-      {data.fulfillment === "Delivery to my address" && (
-        <p className="text-[12px] text-red-500">* Payment is required before delivery.</p>
-      )}
       <div>
         <label className="text-[11px] font-black uppercase tracking-widest text-[#111] mb-2 block">Your Town / Area</label>
         <input
@@ -97,9 +79,10 @@ function OrderModal({ product, onClose }: { product: typeof PRODUCTS[0]; onClose
           <p className="text-[12px] text-[#111] mt-1">* Please include your area and town, e.g. Lavington, Nairobi</p>
         )}
       </div>
+      <p className="text-[12px] text-[#999]">We deliver door to door via Wells Fargo. Payment is required before delivery.</p>
     </div>,
 
-    // Step 2: reason + gift + reorder + group
+    // Step 2: reason + gift + hear about us
     <div key="2" className="flex flex-col gap-5">
       <div>
         <label className="text-[11px] font-black uppercase tracking-widest text-[#111] mb-2 block">What drew you to this bag?</label>
@@ -119,12 +102,11 @@ function OrderModal({ product, onClose }: { product: typeof PRODUCTS[0]; onClose
           ))}
         </div>
       </div>
-
       <div>
-        <label className="text-[11px] font-black uppercase tracking-widest text-[#111] mb-2 block">Can we add you to our WhatsApp group for new arrivals?</label>
-        <div className="flex gap-2">
-          {["Yes please", "No thanks"].map(opt => (
-            <button key={opt} onClick={() => set("whatsappGroup", opt)} className={`flex-1 py-2.5 border text-[13px] font-bold transition-all ${data.whatsappGroup === opt ? "border-[#111] bg-[#111] text-white" : "border-gray-200 text-[#555]"}`}>{opt}</button>
+        <label className="text-[11px] font-black uppercase tracking-widest text-[#111] mb-2 block">How did you hear about us?</label>
+        <div className="flex flex-wrap gap-2">
+          {["Instagram", "TikTok", "WhatsApp", "Friend/Family", "Google", "Other"].map(opt => (
+            <button key={opt} onClick={() => set("hearAboutUs", opt)} className={`px-3 py-2 border text-[12px] font-semibold transition-all ${data.hearAboutUs === opt ? "border-[#111] bg-[#111] text-white" : "border-gray-200 text-[#555]"}`}>{opt}</button>
           ))}
         </div>
       </div>
@@ -157,8 +139,8 @@ function OrderModal({ product, onClose }: { product: typeof PRODUCTS[0]; onClose
 
   const canNext = [
     data.colors.length > 0 && !!data.qty,
-    !!(data.fulfillment && data.payment && (data.town.includes(",") || data.town.trim().includes(" ")) && data.town.trim().length >= 5),
-    !!(data.isGift && data.whatsappGroup),
+    !!(data.town.trim().length >= 3),
+    !!(data.isGift && data.hearAboutUs),
     data.name.trim().length >= 2,
   ];
 
@@ -170,21 +152,19 @@ function OrderModal({ product, onClose }: { product: typeof PRODUCTS[0]; onClose
       `Bag: ${product.name}\n` +
       `Colour: ${data.colors.join(", ")}\n` +
       `Qty: ${data.qty}\n` +
-      `Fulfillment: ${data.fulfillment}\n` +
-      `Payment: ${data.payment}\n` +
       `Town: ${data.town}\n` +
       `Why this bag: ${data.reason || "Not specified"}\n` +
       `For: ${data.isGift}\n` +
-      `WhatsApp group: ${data.whatsappGroup}\n\n` +
-      `Please share availability, payment details and next steps with me. Thank you!`;
+      `Heard about us: ${data.hearAboutUs}\n\n` +
+      `Please share payment details and next steps. Thank you!`;
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
     onClose();
   }
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center px-0 sm:px-4">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
-      <div className="relative w-full sm:max-w-md bg-white rounded-none shadow-2xl flex flex-col max-h-[90svh]">
+      <div className="relative w-full sm:max-w-md bg-white rounded-2xl shadow-2xl flex flex-col max-h-[90svh]">
 
         {/* Header */}
         <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-gray-100 flex-shrink-0">
@@ -251,14 +231,78 @@ function OrderModal({ product, onClose }: { product: typeof PRODUCTS[0]; onClose
   );
 }
 
+function Lightbox({ images, index, onClose }: { images: string[]; index: number; onClose: () => void }) {
+  const [current, setCurrent] = useState(index);
+  const prev = () => setCurrent(i => (i - 1 + images.length) % images.length);
+  const next = () => setCurrent(i => (i + 1) % images.length);
+
+  return (
+    <div className="fixed inset-0 z-[200] flex flex-col" onClick={onClose}>
+      {/* clean white bg */}
+      <div className="absolute inset-0 bg-white" />
+
+      {/* top bar */}
+      <div className="relative z-10 flex items-center justify-between px-5 py-4 flex-shrink-0">
+        <img src="/logo.png" alt="Bellavione" className="h-10 select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
+        <div className="flex items-center gap-3">
+          <span className="text-[#999] text-[12px]">{current + 1} / {images.length}</span>
+          <button onClick={onClose} className="w-8 h-8 rounded-full bg-[#111] flex items-center justify-center hover:bg-[#333] transition-colors">
+            <X className="w-4 h-4 text-white" />
+          </button>
+        </div>
+      </div>
+
+      {/* main image area */}
+      <div className="relative z-10 flex-1 flex items-center justify-center min-h-0" onClick={onClose}>
+        <button
+          onClick={e => { e.stopPropagation(); prev(); }}
+          className="absolute left-3 sm:left-6 p-2 sm:p-3 text-[#111] transition-colors z-10"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+
+        <div className="relative max-w-2xl w-full px-16 sm:px-20" onClick={e => e.stopPropagation()}>
+          <img
+            src={images[current]} alt=""
+            className="w-full max-h-[70svh] object-contain select-none"
+            draggable={false}
+            onContextMenu={e => e.preventDefault()}
+          />
+        </div>
+
+        <button
+          onClick={e => { e.stopPropagation(); next(); }}
+          className="absolute right-3 sm:right-6 p-2 sm:p-3 text-[#111] transition-colors z-10"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* scrollable thumbnail strip */}
+      <div className="relative z-10 flex-shrink-0 pb-4 pt-3" onClick={e => e.stopPropagation()}>
+        <div className="flex gap-2 overflow-x-auto px-4 scrollbar-hide">
+          {images.map((img, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-14 h-14 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all ${current === i ? "border-white" : "border-transparent opacity-40 hover:opacity-70"}`}
+            >
+              <img src={img} alt="" className="w-full h-full object-cover" draggable={false} onContextMenu={e => e.preventDefault()} />
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ProductDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [, navigate] = useLocation();
   const product = PRODUCTS.find((p) => p.slug === slug);
   const [activeImage, setActiveImage] = useState(0);
   const [showOrder, setShowOrder] = useState(false);
-
-  const displayImages = product.images;
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   if (!product) {
     return (
@@ -273,6 +317,10 @@ export default function ProductDetail() {
     );
   }
 
+  const displayImages = product.images;
+  const THUMB_LIMIT = 5;
+  const visibleThumbs = displayImages.slice(0, THUMB_LIMIT);
+  const extraCount = displayImages.length - THUMB_LIMIT;
   const related = PRODUCTS.filter((p) => p.id !== product.id && (p.category === product.category || p.brand === product.brand)).slice(0, 4);
 
   return (
@@ -286,31 +334,48 @@ export default function ProductDetail() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
 
-          {/* Images - main image left, vertical thumbs right */}
+          {/* Images */}
           <div className="flex gap-3 lg:max-w-[520px]">
             {/* Main image */}
-            <div className="flex-1 rounded-2xl overflow-hidden bg-[#f5f5f5] aspect-[4/5]">
-              <img src={displayImages[activeImage]} alt={product.name} className="w-full h-full object-cover" />
+            <div
+              className="relative flex-1 rounded-2xl overflow-hidden bg-[#f5f5f5] aspect-[4/5] cursor-zoom-in"
+              onClick={() => setLightboxIndex(activeImage)}
+            >
+              <img
+                src={displayImages[activeImage]} alt={product.name}
+                className="w-full h-full object-cover select-none"
+                draggable={false}
+                onContextMenu={e => e.preventDefault()}
+              />
+              {/* transparent overlay blocks right-click save on the image */}
+              <div className="absolute inset-0" onContextMenu={e => e.preventDefault()} />
             </div>
-            {/* Thumbnails */}
+            {/* Thumbnails — max 5, last one shows +N */}
             <div className="flex flex-col gap-2">
-              {displayImages.map((img, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActiveImage(i)}
-                  className={`w-12 h-12 rounded-xl overflow-hidden bg-[#f5f5f5] border-2 flex-shrink-0 transition-all ${activeImage === i ? "border-[#111]" : "border-transparent opacity-50 hover:opacity-80"}`}
-                >
-                  <img src={img} alt="" className="w-full h-full object-cover" />
-                </button>
-              ))}
+              {visibleThumbs.map((img, i) => {
+                const isLast = i === THUMB_LIMIT - 1 && extraCount > 0;
+                return (
+                  <button
+                    key={i}
+                    onClick={() => isLast ? setLightboxIndex(i) : setActiveImage(i)}
+                    className={`relative w-12 h-12 rounded-xl overflow-hidden bg-[#f5f5f5] border-2 flex-shrink-0 transition-all ${activeImage === i && !isLast ? "border-[#111]" : "border-transparent opacity-50 hover:opacity-80"}`}
+                  >
+                    <img src={img} alt="" className="w-full h-full object-cover" draggable={false} onContextMenu={e => e.preventDefault()} />
+                    {isLast && (
+                      <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <span className="text-white text-[11px] font-black">+{extraCount}</span>
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
           {/* Info */}
           <div className="flex flex-col gap-6">
             <div>
-              <p className="text-[11px] uppercase tracking-widest text-[#999] font-semibold">{product.brand} · {product.category}</p>
-              <h1 className="text-[22px] sm:text-[26px] font-black text-[#111] leading-tight mt-1">{product.name}</h1>
+              <h1 className="text-[22px] sm:text-[26px] font-black text-[#111] leading-tight">{product.name}</h1>
               <p className="text-[20px] font-black text-[#111] mt-2">{product.price}</p>
             </div>
 
@@ -324,19 +389,20 @@ export default function ProductDetail() {
             <div>
               <p className="text-[11px] font-black uppercase tracking-widest text-[#111] mb-3">Available Colours</p>
               <div className="flex flex-wrap gap-2">
-                {product.colors.map(c => (
-                  <div
-                    key={c.name}
-                    title={c.name}
-                    className={`w-8 h-8 rounded-full border-2 border-gray-200 ${!c.inStock ? "opacity-30" : ""}`}
-                    style={{ backgroundColor: c.hex }}
-                  />
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2">
-                {product.colors.map(c => (
-                  <span key={c.name} className={`text-[11px] ${c.inStock ? "text-[#555]" : "text-[#bbb] line-through"}`}>{c.name}</span>
-                ))}
+                {product.colors.map(c => {
+                  const parts = c.hex.includes("/") ? c.hex.split("/") : null;
+                  return (
+                    <div key={c.name} className={`flex items-center gap-2 px-3 py-1.5 border border-gray-200 rounded-full text-[12px] font-semibold text-[#555] ${!c.inStock ? "opacity-30" : ""}`}>
+                      {parts ? (
+                        <span className="w-3.5 h-3.5 rounded-full border border-gray-300 flex-shrink-0 overflow-hidden" style={{ background: `linear-gradient(90deg, ${parts[0]} 50%, ${parts[1]} 50%)` }} />
+                      ) : (
+                        <span className="w-3.5 h-3.5 rounded-full border border-gray-300 flex-shrink-0" style={{ backgroundColor: c.hex }} />
+                      )}
+                      {c.name}
+                      {!c.inStock && <span className="text-[10px] text-[#bbb]">(sold out)</span>}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -365,7 +431,7 @@ export default function ProductDetail() {
               {related.map((p) => (
                 <div key={p.id} onClick={() => { navigate(`/boutique/${p.slug}`); setActiveImage(0); }} className="cursor-pointer group">
                   <div className="rounded-2xl overflow-hidden bg-[#f5f5f5] aspect-[4/5] mb-3">
-                    <img src={p.image} alt={p.name} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" />
+                    <img src={p.image} alt={p.name} draggable={false} onContextMenu={e => e.preventDefault()} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 select-none" />
                   </div>
                   <p className="text-[10px] uppercase tracking-widest text-[#999] font-semibold">{p.brand}</p>
                   <p className="text-[13px] font-bold text-[#111] mt-0.5">{p.name}</p>
@@ -378,6 +444,7 @@ export default function ProductDetail() {
       </main>
       <Footer />
 
+      {lightboxIndex !== null && <Lightbox images={displayImages} index={lightboxIndex} onClose={() => setLightboxIndex(null)} />}
       {showOrder && <OrderModal product={{ ...product, colors: product.colors }} onClose={() => setShowOrder(false)} />}
     </div>
   );

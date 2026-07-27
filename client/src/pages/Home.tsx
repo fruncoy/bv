@@ -6,6 +6,7 @@ import BrandStrip from "@/components/BrandStrip";
 import ProductSection from "@/components/ProductSection";
 import BoutiqueCTA from "@/components/BoutiqueCTA";
 import AudienceSection from "@/components/AudienceSection";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
 function ScrollToTop() {
@@ -42,6 +43,7 @@ export default function Home() {
         <ProductSection />
         <BoutiqueCTA />
         <AudienceSection />
+        <FAQ />
       </main>
       <Footer />
       <ScrollToTop />

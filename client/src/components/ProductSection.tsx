@@ -22,11 +22,22 @@ function ProductCard({ product }: { product: Product }) {
           <h3 className="text-[13px] font-bold text-[#111] leading-snug">{product.name}</h3>
           <p className="text-[13px] font-black text-[#999]">{product.price}</p>
         </div>
+        <div className="flex items-center gap-1.5">
+          {product.colors.map((c) => {
+            const parts = c.hex.includes("/") ? c.hex.split("/") : null;
+            return parts ? (
+              <div key={c.name} title={c.name} className="w-4 h-4 rounded-full border border-gray-200 flex-shrink-0 overflow-hidden" style={{ background: `linear-gradient(90deg, ${parts[0]} 50%, ${parts[1]} 50%)` }} />
+            ) : (
+              <div key={c.name} title={c.name} className="w-4 h-4 rounded-full border border-gray-200 flex-shrink-0" style={{ backgroundColor: c.hex }} />
+            );
+          })}
+          <span className="text-[10px] text-[#aaa] ml-0.5">{product.colors.length} colour{product.colors.length > 1 ? "s" : ""}</span>
+        </div>
         <button
           onClick={(e) => { e.stopPropagation(); navigate(`/boutique/${product.slug}`); }}
           className="w-full border border-[#111] text-[#111] text-[10px] font-black uppercase tracking-widest px-4 py-2.5 rounded-xl hover:bg-[#111] hover:text-white transition-colors duration-200"
         >
-          View Details
+          Shop Now
         </button>
       </div>
     </div>
