@@ -25,7 +25,7 @@ export default function Header() {
         <a href="/" className="flex-shrink-0">
           <img
             src={LOGO_URL}
-            alt="Bellavione"
+            alt="Bellavione Couture, luxury handbags and meaningful gifts Kenya"
             className="h-12 sm:h-14 w-auto object-contain"
           />
         </a>

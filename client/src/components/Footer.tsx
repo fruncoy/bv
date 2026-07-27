@@ -25,7 +25,7 @@ export default function Footer() {
 
           <img
             src={FOOTER_LOGO}
-            alt="Bellavione"
+            alt="Bellavione Couture, Kenyan luxury handbags and thoughtful gifts for women"
             className="h-12 sm:h-16 lg:h-20 w-auto max-w-[85%] object-contain brightness-0 invert"
           />
 

@@ -1,68 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <url>
     <loc>https://bellavione.shop/</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/hero.png</image:loc>
+      <image:title>Bellavione Couture, Luxury handbags and meaningful gifts for women in Kenya</image:title>
+      <image:caption>Kenya's destination for designer-inspired handbags and thoughtful luxury gifts for women.</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bellavione.shop/boutique</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/kanta/kors%20featured.png</image:loc>
+      <image:title>Shop designer-inspired handbags at Bellavione Boutique Kenya</image:title>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bellavione.shop/boutique/michael-kors-bag</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/kanta/kors%20featured.png</image:loc>
+      <image:title>Michael Kors Avril Small Top-Zip Satchel, Bellavione Couture Kenya</image:title>
+      <image:caption>Michael Kors designer-inspired handbag available in multiple colours at Bellavione Nairobi.</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bellavione.shop/boutique/zara-half-moon-bag</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/kanta/Zara%20Moon%20Bag%20Featured.png</image:loc>
+      <image:title>ZARA Signature Half-Moon Handbag, Bellavione Couture Kenya</image:title>
+      <image:caption>ZARA Half-Moon handbag, elegant statement piece for special occasions and everyday luxury.</image:caption>
+    </image:image>
   </url>
 
   <url>
-    <loc>https://bellavione.shop/boutique/zara-cheater-bag</loc>
+    <loc>https://bellavione.shop/boutique/zara-trapeze-bag</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/kanta/zara%20cheater%20bag%20image.png</image:loc>
+      <image:title>ZARA Trapeze Silhouette Handbag, Bellavione Couture Kenya</image:title>
+      <image:caption>ZARA Trapeze silhouette handbag, bold and unique piece perfect for anniversaries, birthdays, and special moments.</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bellavione.shop/boutique/tommy-hilfiger-bag</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/kanta/tommy%20hilfiger%20white%20decorated.png</image:loc>
+      <image:title>Tommy Hilfiger Signature Tote, Bellavione Couture Kenya</image:title>
+      <image:caption>Tommy Hilfiger signature tote, timeless designer-inspired handbag ideal for gifting and self-reward.</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bellavione.shop/journal</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://bellavione.shop/journal/how-to-spot-a-quality-handbag</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/fine.png</image:loc>
+      <image:title>How to Spot a Quality Handbag, Bellavione Journal</image:title>
+      <image:caption>7 things to check before buying a handbag, guide to quality craftsmanship, stitching, hardware and leather.</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bellavione.shop/journal/best-handbags-for-nairobi-women-2026</loc>
+    <lastmod>2026-06-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/date.png</image:loc>
+      <image:title>The Best Handbags for Nairobi Women in 2026, Bellavione Journal</image:title>
+      <image:caption>Curated selection of handbags that fit Nairobi's lifestyle, from brunch to fine dining to work in Kenya.</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bellavione.shop/journal/why-a-handbag-makes-the-perfect-gift</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/gift.png</image:loc>
+      <image:title>Why A Handbag Makes The Perfect Gift, Bellavione Journal</image:title>
+      <image:caption>Meaningful anniversary, birthday and graduation gift ideas for women in Kenya, why handbags are memorable gifts.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/luxury-gifts-for-women-kenya</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/gift.png</image:loc>
+      <image:title>Luxury Gifts For Women In Kenya, Bellavione Couture</image:title>
+      <image:caption>Curated designer-inspired handbags and luxury gift ideas for women in Kenya. Perfect for birthdays, anniversaries, and meaningful moments.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/graduation-gifts-for-her</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/fine.png</image:loc>
+      <image:title>Graduation Gifts For Her In Kenya, Bellavione Couture</image:title>
+      <image:caption>Meaningful graduation gifts for women in Kenya. Celebrate her achievement with a beautiful handbag she will carry into her next chapter.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/anniversary-gifts-for-her</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/date.png</image:loc>
+      <image:title>Anniversary Gifts For Her In Kenya, Bellavione Couture</image:title>
+      <image:caption>Romantic, timeless anniversary handbag gifts for your wife or girlfriend in Kenya.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/birthday-gifts-for-women</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/fine.png</image:loc>
+      <image:title>Birthday Gifts For Women In Kenya, Bellavione Couture</image:title>
+      <image:caption>Thoughtful and stylish birthday handbag gifts for women in Nairobi and across Kenya.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/gifts-for-wife</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/gift.png</image:loc>
+      <image:title>Gifts For Wife In Kenya, Bellavione Couture</image:title>
+      <image:caption>Elegant, meaningful handbag gifts for your wife who does everything for everyone.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/gifts-for-girlfriend</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/date.png</image:loc>
+      <image:title>Gifts For Girlfriend In Kenya, Bellavione Couture</image:title>
+      <image:caption>Romantic and impressive handbag gifts for your girlfriend in Kenya.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/big-girl-purchase</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/hero.png</image:loc>
+      <image:title>Big Girl Purchase, Buy Yourself The Handbag, Kenya</image:title>
+      <image:caption>Self-gifting and big girl purchase handbags after your first salary, promotion, or big win in Kenya.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/designer-inspired-handbags-kenya</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/kanta/kors%20featured.png</image:loc>
+      <image:title>Designer Inspired Handbags In Kenya, Bellavione Atelier</image:title>
+      <image:caption>Michael Kors, Zara, Tommy Hilfiger designer-inspired handbags curated from Turkiye and delivered across Kenya.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/what-to-gift-a-woman-who-has-everything</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.88</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/gift.png</image:loc>
+      <image:title>What To Gift A Woman Who Has Everything, Bellavione Couture Kenya</image:title>
+      <image:caption>Thoughtful handbag gift ideas for the woman who already has everything, curated by Bellavione Couture Kenya.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/are-handbags-good-gifts</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/fine.png</image:loc>
+      <image:title>Are Handbags Good Gifts, Yes, Bellavione Couture Kenya</image:title>
+      <image:caption>Why handbags make excellent gifts for women, answered by Bellavione Couture Kenya.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://bellavione.shop/how-to-choose-a-handbag-for-her</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://bellavione.shop/date.png</image:loc>
+      <image:title>How To Choose A Handbag For Her, Bellavione Gift Guide Kenya</image:title>
+      <image:caption>7 rules for choosing the perfect handbag gift for your wife, girlfriend, or friend in Kenya.</image:caption>
+    </image:image>
   </url>
 
   <url>
     <loc>https://bellavione.shop/concierge</loc>
+    <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

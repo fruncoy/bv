@@ -231,7 +231,7 @@ function OrderModal({ product, onClose }: { product: typeof PRODUCTS[0]; onClose
   );
 }
 
-function Lightbox({ images, index, onClose }: { images: string[]; index: number; onClose: () => void }) {
+function Lightbox({ images, index, onClose, productName }: { images: string[]; index: number; onClose: () => void; productName?: string }) {
   const [current, setCurrent] = useState(index);
   const prev = () => setCurrent(i => (i - 1 + images.length) % images.length);
   const next = () => setCurrent(i => (i + 1) % images.length);
@@ -243,7 +243,7 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
 
       {/* top bar */}
       <div className="relative z-10 flex items-center justify-between px-5 py-4 flex-shrink-0">
-        <img src="/logo.png" alt="Bellavione" className="h-10 select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
+        <img src="/logo.png" alt="Bellavione Couture, luxury handbags Kenya" className="h-10 select-none" draggable={false} onContextMenu={e => e.preventDefault()} />
         <div className="flex items-center gap-3">
           <span className="text-[#999] text-[12px]">{current + 1} / {images.length}</span>
           <button onClick={onClose} className="w-8 h-8 rounded-full bg-[#111] flex items-center justify-center hover:bg-[#333] transition-colors">
@@ -263,7 +263,7 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
 
         <div className="relative max-w-2xl w-full px-16 sm:px-20" onClick={e => e.stopPropagation()}>
           <img
-            src={images[current]} alt=""
+            src={images[current]} alt={`${productName ?? "Bellavione handbag"}, view ${current + 1} of ${images.length}`}
             className="w-full max-h-[70svh] object-contain select-none"
             draggable={false}
             onContextMenu={e => e.preventDefault()}
@@ -287,7 +287,7 @@ function Lightbox({ images, index, onClose }: { images: string[]; index: number;
               onClick={() => setCurrent(i)}
               className={`w-14 h-14 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all ${current === i ? "border-white" : "border-transparent opacity-40 hover:opacity-70"}`}
             >
-              <img src={img} alt="" className="w-full h-full object-cover" draggable={false} onContextMenu={e => e.preventDefault()} />
+              <img src={img} alt={`Handbag gallery thumbnail ${i + 1}`} className="w-full h-full object-cover" draggable={false} onContextMenu={e => e.preventDefault()} />
             </button>
           ))}
         </div>
@@ -350,7 +350,7 @@ export default function ProductDetail() {
               {/* transparent overlay blocks right-click save on the image */}
               <div className="absolute inset-0" onContextMenu={e => e.preventDefault()} />
             </div>
-            {/* Thumbnails — max 5, last one shows +N */}
+            {/* Thumbnails, max 5, last one shows +N */}
             <div className="flex flex-col gap-2">
               {visibleThumbs.map((img, i) => {
                 const isLast = i === THUMB_LIMIT - 1 && extraCount > 0;
@@ -360,7 +360,7 @@ export default function ProductDetail() {
                     onClick={() => isLast ? setLightboxIndex(i) : setActiveImage(i)}
                     className={`relative w-12 h-12 rounded-xl overflow-hidden bg-[#f5f5f5] border-2 flex-shrink-0 transition-all ${activeImage === i && !isLast ? "border-[#111]" : "border-transparent opacity-50 hover:opacity-80"}`}
                   >
-                    <img src={img} alt="" className="w-full h-full object-cover" draggable={false} onContextMenu={e => e.preventDefault()} />
+                    <img src={img} alt={`${product.name} thumbnail ${i + 1}`} className="w-full h-full object-cover" draggable={false} onContextMenu={e => e.preventDefault()} />
                     {isLast && (
                       <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                         <span className="text-white text-[11px] font-black">+{extraCount}</span>
@@ -444,7 +444,7 @@ export default function ProductDetail() {
       </main>
       <Footer />
 
-      {lightboxIndex !== null && <Lightbox images={displayImages} index={lightboxIndex} onClose={() => setLightboxIndex(null)} />}
+      {lightboxIndex !== null && <Lightbox images={displayImages} index={lightboxIndex} onClose={() => setLightboxIndex(null)} productName={product.name} />}
       {showOrder && <OrderModal product={{ ...product, colors: product.colors }} onClose={() => setShowOrder(false)} />}
     </div>
   );

@@ -11,7 +11,7 @@ export default function AudienceSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Left: full height card — gift */}
+        {/* Left: full height card, gift */}
         <div
           className="relative rounded-2xl overflow-hidden flex flex-col justify-end min-h-[480px]"
           style={{ backgroundImage: "url('/gift.png')", backgroundSize: "cover", backgroundPosition: "center" }}

@@ -20,7 +20,7 @@ export default function Hero() {
           className="relative overflow-hidden rounded-[22px] sm:rounded-[26px] w-full"
           style={{ height: "calc(100svh - 220px)", minHeight: "460px", maxHeight: "620px" }}
         >
-          <img src={HERO_IMAGE} alt="Bellavione Hero" className="w-full h-full object-cover object-center block" />
+          <img src={HERO_IMAGE} alt="Bellavione Couture luxury designer-inspired handbag for women in Kenya" className="w-full h-full object-cover object-center block" />
           <div className="absolute inset-0">
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 95% 85% at 5% 100%, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.18) 28%, rgba(0,0,0,0.08) 46%, rgba(0,0,0,0) 68%)" }} />
             <div className="relative z-10 h-full flex flex-col justify-end px-6 sm:px-8 pb-6 sm:pb-7 pt-16 sm:pt-20">
@@ -43,13 +43,13 @@ export default function Hero() {
           className="relative overflow-hidden rounded-[26px] w-full"
           style={{ height: "calc(100svh - 260px)", minHeight: "460px", maxHeight: "560px" }}
         >
-          <img src={HERO_IMAGE} alt="Bellavione Hero" className="w-full h-full object-contain object-right block bg-white" />
+          <img src={HERO_IMAGE} alt="Bellavione Couture, Kenyan luxury handbags and meaningful gifts for her" className="w-full h-full object-contain object-right block bg-white" />
           <div className="absolute inset-0">
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 95% 85% at 4% 100%, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.16) 28%, rgba(0,0,0,0.07) 46%, rgba(0,0,0,0) 68%)" }} />
             <div className="relative z-10 h-full flex flex-col justify-end px-10 pb-8 pt-24">
-              <h1 className="font-black text-white leading-[0.78] tracking-[-0.015em] text-[36px] max-w-[68%]" style={{ textShadow: "0 1px 0 rgba(0,0,0,0.15), 0 5px 20px rgba(0,0,0,0.55), 0 0 40px rgba(0,0,0,0.35)" }}>
+              <h2 className="font-black text-white leading-[0.78] tracking-[-0.015em] text-[36px] max-w-[68%]" style={{ textShadow: "0 1px 0 rgba(0,0,0,0.15), 0 5px 20px rgba(0,0,0,0.55), 0 0 40px rgba(0,0,0,0.35)" }}>
                 <span className={L("0.1s")} style={S("0.1s")}>For Women</span><br /><span className={L("0.3s")} style={S("0.3s")}>Who Know</span><br /><span className={L("0.5s")} style={S("0.5s")}>The Difference</span>
-              </h1>
+              </h2>
               <div className="mt-6">
                 <a href="/boutique" className={CTA_PILL + " text-[11px] tracking-[0.22em] border-emerald-800/90 text-emerald-950 bg-white hover:bg-emerald-800 hover:border-emerald-800 hover:text-white hover:shadow-[0_8px_28px_-10px_rgba(6,95,70,0.6)]"} style={{ paddingLeft: "1.5rem", paddingRight: "1.5rem", paddingTop: "0.75rem", paddingBottom: "0.75rem" }}>
                   Enter the Atelier
@@ -66,13 +66,13 @@ export default function Hero() {
           className="relative overflow-hidden rounded-[30px] w-full"
           style={{ height: "calc(100svh - 270px)", minHeight: "460px", maxHeight: "580px" }}
         >
-          <img src={HERO_IMAGE} alt="Bellavione Hero" className="w-full h-full object-contain object-right block bg-white" />
+          <img src={HERO_IMAGE} alt="Bellavione Couture, Kenyan luxury handbags and meaningful gifts for her" className="w-full h-full object-contain object-right block bg-white" />
           <div className="absolute inset-0">
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 95% 85% at 4% 100%, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.16) 28%, rgba(0,0,0,0.07) 46%, rgba(0,0,0,0) 68%)" }} />
             <div className="relative z-10 h-full flex flex-col justify-end px-14 pb-9 pt-32">
-              <h1 className="font-black text-white leading-[0.78] tracking-[-0.015em] text-[46px] max-w-[65%]" style={{ textShadow: "0 1px 0 rgba(0,0,0,0.15), 0 6px 24px rgba(0,0,0,0.55), 0 0 48px rgba(0,0,0,0.35)" }}>
+              <h2 className="font-black text-white leading-[0.78] tracking-[-0.015em] text-[46px] max-w-[65%]" style={{ textShadow: "0 1px 0 rgba(0,0,0,0.15), 0 6px 24px rgba(0,0,0,0.55), 0 0 48px rgba(0,0,0,0.35)" }}>
                 <span className={L("0.1s")} style={S("0.1s")}>For Women</span><br /><span className={L("0.3s")} style={S("0.3s")}>Who Know</span><br /><span className={L("0.5s")} style={S("0.5s")}>The Difference</span>
-              </h1>
+              </h2>
               <div className="mt-7">
                 <a href="/boutique" className={CTA_PILL + " text-[11px] tracking-[0.24em] border-emerald-800/90 text-emerald-950 bg-white hover:bg-emerald-800 hover:border-emerald-800 hover:text-white hover:shadow-[0_8px_28px_-10px_rgba(6,95,70,0.6)]"} style={{ paddingLeft: "1.6rem", paddingRight: "1.6rem", paddingTop: "0.8rem", paddingBottom: "0.8rem" }}>
                   Enter the Atelier
@@ -89,13 +89,13 @@ export default function Hero() {
           className="relative overflow-hidden rounded-[32px] w-full"
           style={{ height: "calc(100svh - 290px)", minHeight: "480px", maxHeight: "600px" }}
         >
-          <img src={HERO_IMAGE} alt="Bellavione Hero" className="w-full h-full object-contain object-right block bg-white" />
+          <img src={HERO_IMAGE} alt="Bellavione Couture, Kenyan luxury handbags and meaningful gifts for her" className="w-full h-full object-contain object-right block bg-white" />
           <div className="absolute inset-0">
             <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 95% 85% at 4% 100%, rgba(0,0,0,0.28) 0%, rgba(0,0,0,0.16) 28%, rgba(0,0,0,0.07) 46%, rgba(0,0,0,0) 68%)" }} />
             <div className="relative z-10 h-full flex flex-col justify-end pb-9 pt-32" style={{ paddingLeft: "4rem", paddingRight: "4rem" }}>
-              <h1 className="font-black text-white leading-[0.78] tracking-[-0.015em] text-[54px] max-w-[62%]" style={{ textShadow: "0 1px 0 rgba(0,0,0,0.15), 0 6px 24px rgba(0,0,0,0.55), 0 0 48px rgba(0,0,0,0.35)" }}>
+              <h2 className="font-black text-white leading-[0.78] tracking-[-0.015em] text-[54px] max-w-[62%]" style={{ textShadow: "0 1px 0 rgba(0,0,0,0.15), 0 6px 24px rgba(0,0,0,0.55), 0 0 48px rgba(0,0,0,0.35)" }}>
                 <span className={L("0.1s")} style={S("0.1s")}>For Women</span><br /><span className={L("0.3s")} style={S("0.3s")}>Who Know</span><br /><span className={L("0.5s")} style={S("0.5s")}>The Difference</span>
-              </h1>
+              </h2>
               <div className="mt-7">
                 <a href="/boutique" className={CTA_PILL + " text-[12px] tracking-[0.26em] border-emerald-800 text-emerald-950 bg-white hover:bg-emerald-800 hover:border-emerald-800 hover:text-white hover:shadow-[0_10px_32px_-10px_rgba(6,95,70,0.6)]"} style={{ paddingLeft: "1.8rem", paddingRight: "1.8rem", paddingTop: "0.85rem", paddingBottom: "0.85rem" }}>
                   Enter the Atelier
